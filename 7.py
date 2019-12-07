@@ -42,7 +42,7 @@ def part2():
         output = 0
         while sum([p.runState for p in processors]) > 0:  # The runState is zero when the processor is ended
             for i in range(5):
-                output = processors[i].run([output]) # put the output of the last processor into the input of the next
+                output = processors[i].run([output]) # pass the output of this processor as the input of the next
                 # The processors now pause when they run out of input, remembering their current line position
             if output is not None:
                 lastE = output
