@@ -1,7 +1,7 @@
 class Processor():
     def __init__(self, basememory):
         self.memory = basememory[:]
-        self.reg1 = 0
+        self.rba = 0
         self.opcode = 0
         self.pos = 0
         self.runState = 0
@@ -12,7 +12,10 @@ class Processor():
     def getData(self, modes, para, modeIndex):
         if modes[modeIndex] =="0":
             return self.memory[para]
-        return para
+        elif modes[modeIndex] == "2":
+            return self.memory[self.rba + para]
+        else:
+            return para
 
     def add(self, modes, para1, para2, para3):
         data1 = self.getData(modes, para1, -1)
@@ -69,6 +72,9 @@ class Processor():
         if opcode == "08":
             self.equ(modes, self.memory[pos+1], self.memory[pos+2], self.memory[pos+3])
             return pos + 4, None
+        if opcode == "09":
+            self.arb(modes, self.memory[pos+1])
+            return pos + 2, None
 
     def run(self, inputs):
         self.inputs = inputs
