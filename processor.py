@@ -6,7 +6,6 @@ class Processor():
         for pos in range(len(basememory)):
             self.memory[pos] = basememory[pos]
         self.rba = 0
-        self.opcode = 0
         self.pos = 0
         self.runState = 0
 
