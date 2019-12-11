@@ -16,6 +16,7 @@ class Asteroid():
 
         if angle < 0:
             angle += 360  # ugh. This is such a kludge. I was in a hurry.
+            # Any negative angles represent the final quadrant of the circle, so they belong in the 270-360 region
         return angle
 
     def countAngles(self, alist):
