@@ -44,7 +44,7 @@ class Processor():
 
     def out(self, modes):
         data = self.getPara(modes, 1, -1)
-        print(self.memory[data])
+        #print(self.memory[data])
         return self.memory[data]
 
     def processCommand(self):
@@ -91,11 +91,11 @@ class Processor():
     def run(self, inputs):
         self.inputs = inputs
         self.runState = 1
-        output = None
+        output = []
         while self.runState == 1 and self.pos < len(self.memory) - 2 and self.memory[self.pos] != 99:
             o = self.processCommand()
             if o is not None:
-                output = o
+                output.append(o)
         if self.memory[self.pos] == 99:
             self.runState = 0
         return output
