@@ -35,7 +35,7 @@ def hashit(bodies, states, step, done):
     # when trying to identify whether a particular position has ever appeared before, it would be very slow to put them
     # in a list and try to search it.
     # Using a dictionary lets us produce a hash value for a position, which gives us a very quick lookup
-    # (it should have a time complexity of O(1)   )
+    # (it should have a time complexity of O(1)  )
 
     stateStrings = ["","",""]  # These will be used to hold strings which represent a state.
     #                            One string will be used for each dimension (x, y, z)
@@ -45,6 +45,8 @@ def hashit(bodies, states, step, done):
             stateStrings[d] += f"{b.positions[d]}:{b.vels[d]} "
     print(stateStrings[0])
     # at this point, a single stateString looks something like: "15:0 -5:0 0:0 5:0"
+    # representing   "xpos:xvel xpos:xvel xpos:xvel xpos:xvel"  one pair of values for each body's x state
+
     # it doesn't really matter what this looks like, so long as each state produces a unique string that can be used
     # as a dictionary index. it will be hashed to produce a unique number
 
