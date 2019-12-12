@@ -1,6 +1,17 @@
 from pygame_functions import *
 import math
 
+
+# Instructions:
+# Press Space to pause the orbits at any time
+# then use cursor keys to rotate the universe!
+# Press G to Go again
+
+# Note: The rotating does not update the velocities,
+# So it will no longer provide valid solutions for the
+# Advent of Code puzzle
+
+
 screenSize(900,900)
 setAutoUpdate(False)
 
