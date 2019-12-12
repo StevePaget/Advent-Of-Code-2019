@@ -3,6 +3,10 @@ import math
 
 
 # Instructions:
+# To view this visualisation, you need Pygame installed
+# and have a copy of my library pygame_functions.
+# This is provided in the git repository.
+
 # Press Space to pause the orbits at any time
 # then use cursor keys to rotate the universe!
 # Press G to Go again
