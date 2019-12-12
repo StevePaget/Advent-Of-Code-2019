@@ -1,3 +1,4 @@
+
 class Body():
     def __init__(self,x,y,z):
         self.positions = [x,y,z]
@@ -43,7 +44,6 @@ def hashit(bodies, states, step, done):
         for d in range(3):
             #  We add the position and velocity of this body to the string describing the relevant dimension
             stateStrings[d] += f"{b.positions[d]}:{b.vels[d]} "
-    print(stateStrings[0])
     # at this point, a single stateString looks something like: "15:0 -5:0 0:0 5:0"
     # representing   "xpos:xvel xpos:xvel xpos:xvel xpos:xvel"  one pair of values for each body's x state
 
@@ -82,3 +82,5 @@ print(totalEnergy)
 # The answer is the least common multiple of these
 # I was super lazy, so I didn't program this calculation.
 # I used the website https://www.calculatorsoup.com/calculators/math/lcm.php instead!
+
+
