@@ -9,9 +9,9 @@ def load(fname):
 
 program = [int(c) for c in load("17.txt").split(",")]
 
-proc = Processor(program)
-
 def part1():
+    proc = Processor(program)
+    out = proc.run([])
     mapp = [[]]
     row = 0
     i = 0
@@ -37,6 +37,7 @@ def part1():
     print(total)
 
 def part2():
+    proc = Processor(program)
     proc.memory[0] = 2
     A = "L,12,L,8,R,10\n"
     B = "R,4,R,12,R,10,L,12\n"
@@ -48,5 +49,7 @@ def part2():
     out = proc.run([ord(c) for c in C])
     out = proc.run([ord(c) for c in "n\n"])
     print(out)
+
+part1()
 part2()
 
